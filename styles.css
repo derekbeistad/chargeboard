@@ -1,0 +1,169 @@
+/* Main */
+:root {
+  --ff-hero: "Palanquin Dark", sans-serif;
+  --ff-primary: "Cormorant", serif;
+
+  --clr-light: #ededed;
+  --clr-dark: #171717;
+  --clr-blue: #1c8eff;
+  --clr-gold: #ffce2b;
+  --clr-pink: #ff7875;
+}
+
+a {
+  color: var(--clr-light);
+  text-decoration: none;
+}
+
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+hr {
+  animation: slideLeft 2s ease-in-out 1s 1 normal both;
+  margin-top: 0;
+}
+
+/* Typography */
+body {
+  color: var(--clr-light);
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+/* Hero Text */
+.hero-title {
+  font-family: var(--ff-hero);
+  font-size: 6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subheading {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0;
+  text-align: right;
+}
+
+.hero-btn {
+  animation: slideLeft 2s ease-in-out 1s 1 normal both;
+  background-color: var(--clr-gold);
+  border: none;
+  border-radius: 50px;
+  color: var(--clr-dark);
+  font-family: var(--ff-hero);
+  font-size: 2rem;
+  margin: 30px 0;
+  padding: 10px;
+  width: 100%;
+  z-index: 99;
+}
+
+.hero-btn:hover {
+  background-color: var(--clr-blue);
+  color: var(--clr-light);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.hero-text {
+  font-family: var(--ff-hero);
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-align: right;
+}
+
+.hero-image {
+  animation: slideRight 2s ease-in-out 1s 1 normal both;
+
+  height: 115%;
+  position: absolute;
+  right: 0;
+  top: -100px;
+  transition-duration: .1s;
+  transition-timing-function: ease-in-out;
+  opacity: .8;
+}
+
+/* Sections */
+#landing-page {
+  background-color: var(--clr-dark);
+  box-sizing: border-box;
+  height: 100vh;
+  padding: 50px;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.container {
+  padding: 5% 10%;
+  position: relative;
+  z-index: 999;
+}
+
+.col {
+  display: inline-block;
+  width: 575px;
+  z-index: 999;
+}
+
+/* Nav */
+.nav {
+  left: 0;
+  margin: 0 20px;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+}
+
+/* Media CHanges */
+@media (max-width: 800px) {
+  .hero-image {
+    height: 100%;
+    top: -50px;
+  }
+
+  .hero-text, .subheading {
+    text-align: left;
+  }
+
+  .container {
+    padding: 20% 5%;
+  }
+
+  .col {
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    text-align: left;
+  }
+}
+
+/* Animation */
+@keyframes slideRight {
+  from {
+    transform: translateX(1100px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(-1000px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
