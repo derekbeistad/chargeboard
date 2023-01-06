@@ -1,13 +1,13 @@
 /* Main */
 :root {
-  --ff-hero: "Palanquin Dark", sans-serif;
-  --ff-primary: "Cormorant", serif;
-
   --clr-light: #ededed;
   --clr-dark: #171717;
   --clr-blue: #1c8eff;
   --clr-gold: #ffce2b;
   --clr-pink: #ff7875;
+
+  --ff-hero: "Palanquin Dark", sans-serif;
+  --ff-primary: "Palanquin", sans-serif;
 }
 
 a {
@@ -17,6 +17,8 @@ a {
 
 html,
 body {
+  color: var(--clr-light);
+  font-family: var(--ff-primary);
   margin: 0;
   overflow: hidden;
 }
@@ -27,16 +29,6 @@ hr {
 }
 
 /* Typography */
-body {
-  color: var(--clr-light);
-}
-
-h1 {
-  font-size: 1.5rem;
-  font-weight: 400;
-}
-
-/* Hero Text */
 .hero-title {
   font-family: var(--ff-hero);
   font-size: 6rem;
@@ -44,13 +36,26 @@ h1 {
   margin: 0;
 }
 
+.hero-text {
+  font-family: var(--ff-hero);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: right;
+}
+
 .subheading {
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 100;
   margin: 0;
   text-align: right;
 }
 
+.nav-title {
+  font-size: 1.25rem;
+  font-weight: 100;
+}
+
+/* Button */
 .hero-btn {
   animation: slideLeft 2s ease-in-out 1s 1 normal both;
   background-color: var(--clr-gold);
@@ -72,32 +77,25 @@ h1 {
   font-weight: 700;
 }
 
-.hero-text {
-  font-family: var(--ff-hero);
-  font-size: 1.5rem;
-  font-weight: 300;
-  text-align: right;
-}
-
+/* Image */
 .hero-image {
   animation: slideRight 2s ease-in-out 1s 1 normal both;
-
   height: 115%;
+  opacity: 0.8;
   position: absolute;
   right: 0;
   top: -100px;
-  transition-duration: .1s;
+  transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
-  opacity: .8;
 }
 
-/* Sections */
+/* Containers */
 #landing-page {
   background-color: var(--clr-dark);
   box-sizing: border-box;
   height: 100vh;
-  padding: 50px;
   overflow: hidden;
+  padding: 50px;
   width: 100vw;
 }
 
@@ -124,15 +122,6 @@ h1 {
 
 /* Media CHanges */
 @media (max-width: 800px) {
-  .hero-image {
-    height: 100%;
-    top: -50px;
-  }
-
-  .hero-text, .subheading {
-    text-align: left;
-  }
-
   .container {
     padding: 20% 5%;
   }
@@ -141,9 +130,25 @@ h1 {
     width: 100%;
   }
 
+  .hero-image {
+    height: 100%;
+    top: -50px;
+  }
+
+  .hero-text,
+  .subheading {
+    text-align: left;
+  }
+
   .hero-title {
     font-size: 3.5rem;
     text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.75rem;
   }
 }
 
